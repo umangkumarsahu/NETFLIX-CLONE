@@ -5,6 +5,8 @@ export type TmdbMovie = {
   poster_path: string | null;
   backdrop_path: string | null;
   overview: string;
+  release_date?: string;
+  vote_average?: number;
 };
 
 export type TmdbResponse<T> = {
@@ -56,6 +58,10 @@ export async function getUpcomingMovies(): Promise<TmdbMovie[]> {
 export function posterUrl(path: string | null, size: "w185" | "w342" | "w500" = "w500"): string | null {
   if (!path) return null;
   return `https://image.tmdb.org/t/p/${size}${path}`;
+}
+
+export async function getMovieDetails(id: string | number): Promise<TmdbMovie> {
+  return tmdbFetch<TmdbMovie>(`/movie/${id}`);
 }
 
 

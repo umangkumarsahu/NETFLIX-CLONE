@@ -1,11 +1,16 @@
+import Image from "next/image";
+
 export default function Hero() {
   return (
     <section className="relative h-[70vh] min-h-[420px] w-full overflow-hidden bg-black">
       <div className="absolute inset-0">
-        <img
+        <Image
           src="https://images.unsplash.com/photo-1517602302552-471fe67acf66?q=80&w=2070&auto=format&fit=crop"
           alt="Featured background"
-          className="h-full w-full object-cover opacity-60"
+          fill
+          sizes="100vw"
+          className="object-cover opacity-60"
+          priority
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
       </div>
