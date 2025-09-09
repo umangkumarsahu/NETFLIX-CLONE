@@ -20,6 +20,17 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+## Environment Variables
+
+Create a `.env.local` file in the project root with:
+
+```
+TMDB_API_KEY=YOUR_TMDB_V4_READ_ACCESS_TOKEN
+# TMDB_API_BASE=https://api.themoviedb.org/3
+```
+
+To obtain the token, visit TMDB settings and generate a Read Access Token (v4). The app will gracefully fallback to demo images if the token is missing.
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
